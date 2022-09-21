@@ -4,6 +4,30 @@ import { data } from "../data/data";
 const Food = () => {
   console.log(data);
   const [foods, setFoods] = useState(data);
+
+// add function to filter out objects
+// filter type/burgers,pizza,chicken,salad
+
+  const filterType=(category)=>{
+    setFoods(
+      data.filter((items)=>{
+        return items.category===category
+      })
+    )
+  }
+
+  //filter by price
+  const filterPrice=(price)=>{
+    setFoods(
+      data.filter((items)=>{
+        return items.price===price
+      })
+    )
+  }
+
+
+
+
   return (
     <div className="max-w-[1640px] m-auto px-4 py-12">
       <h1 className="text-orange-600 font-bold text-4xl text-center  ">
